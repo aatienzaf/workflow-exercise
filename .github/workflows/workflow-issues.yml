@@ -6,3 +6,5 @@ jobs:
     steps:
       - name: Output event details
         run: echo "${{ toJson(github.event) }}"
+      - name: Testing defaults
+        run: echo "Switched default branch"
