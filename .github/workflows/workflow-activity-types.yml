@@ -1,6 +1,6 @@
 name: Activity Types Example
 on:
-  pull-request:
+  pull_request:
     types:
       - opened
 jobs:
