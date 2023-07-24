@@ -1,0 +1,11 @@
+name: Activity Types Example
+on:
+  pull-request:
+    types:
+      - opened
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example echoes
+        run: echo "This is an example echo"
