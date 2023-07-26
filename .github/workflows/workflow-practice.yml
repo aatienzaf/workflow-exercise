@@ -33,7 +33,7 @@ jobs:
         id: test-step
         run: npm run test
       - name: Upload job artifact
-        if: steps.test-step.outcome == 'failure'
+        if: steps.test-step.outcome == 'success'
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
