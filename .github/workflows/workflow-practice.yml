@@ -1,5 +1,9 @@
 name: Practicing workflows
-on: push
+on:
+  push:
+    branches:
+      - main
+      - merging
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -26,7 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Tests
+        id: test-step
         run: npm run test
+      - name: Upload job artifact
+        if: steps.test-step.outcome == 'failure'
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: |
+            dist
+            package.json
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -40,12 +53,3 @@ jobs:
         run: npm ci
       - name: Build Code
         run: npm run build
-      - name: Upload job artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist-files
-          path: |
-            dist
-            package.json
-      - name: Deploy
-        run: echo "Deploying..."
