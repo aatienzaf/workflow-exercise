@@ -1,0 +1,13 @@
+name: Activity Types Example
+on:
+  pull_request:
+    types:
+      - opened
+    paths-ignore:
+      '.github/workflows/*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example echoes
+        run: echo "This is an example echo"
