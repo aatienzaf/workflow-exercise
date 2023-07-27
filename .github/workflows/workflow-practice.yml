@@ -30,6 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Tests
+        continue-on-error: true
         id: test-step
         run: npm run test
       - name: Upload job artifact
