@@ -3,5 +3,5 @@ module.exports = {
   collectCoverageFrom: ["src/**/*.{js,jsx}"],
   coverageDirectory: "coverage",
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/test/setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/src/test/setup.js"],
 };
