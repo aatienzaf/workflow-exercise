@@ -29,7 +29,6 @@ jobs:
           node-version: 18
       - name: Code Coverage
         run: |
-          npm ci
           npm run coverage
   test:
     runs-on: ubuntu-latest
