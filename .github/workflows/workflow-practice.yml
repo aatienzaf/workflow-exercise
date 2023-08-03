@@ -1,9 +1,9 @@
 name: Practicing workflows
 on: workflow_dispatch
-#  push:
-#    branches:
-#      - main
-#      - merging
+  push:
+    branches:
+      - main
+      - merging
 jobs:
   lint:
     runs-on: ubuntu-latest
