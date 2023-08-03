@@ -27,9 +27,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install Jest
+      - name: Code Coverage
         run: |
-          npm install --save-dev jest
+          npm run coverage
   test:
     runs-on: ubuntu-latest
     steps:
